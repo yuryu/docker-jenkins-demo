@@ -1,7 +1,7 @@
 # docker-jenkins-demo
 Running Jenkins and slaves on Docker
 
-# Build and run jenkins
+## Build and run jenkins
 
 ```
 $ cd jenkins
@@ -10,14 +10,14 @@ $ docker run -d -v /var/lib/jenkins --name jenkins-home yuryu/demo-jenkins echo 
 $ docker run --volumes-from jenkins-home -d -p 8080:8080 yuryu/demo-jenkins 
 ```
 
-# Build slave image
+## Build slave image
 
 ```
 $ cd slave
 $ docker build -t yuryu/demo-jenkins-slave .
 ```
 
-# Backup and restore
+## Backup and restore
 
 ```
 # mkdir /tmp/backup
