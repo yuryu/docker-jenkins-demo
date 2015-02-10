@@ -19,11 +19,15 @@ $ docker build -t yuryu/demo-jenkins-slave .
 
 ## Backup and restore
 
+### Backup
 ```
 # mkdir /tmp/backup
 # chcon -Rt svirt_sandbox_file_t /tmp/backup
 $ docker run --volumes-from jenkins-home -v /tmp/backup:/backup fedora tar cfz /backup/jenkins-home.tar.gz /var/lib/jenkins
+```
 
+### Restore
+```
 # Restore
 $ docker run --volumes-from jenkins-home -v /tmp/backup:/backup fedora tar xf /backup/jenkins-home.tar.gz -C /
 ```
