@@ -9,6 +9,8 @@ RUN yum -y install openssh-server java-1.7.0-openjdk
 RUN adduser jenkins
 RUN echo "jenkins:jenkins" | chpasswd
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
+RUN ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
+RUN ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa
 
 RUN yum -y install gcc gcc-c++ automake autoconf make git libtool
 
